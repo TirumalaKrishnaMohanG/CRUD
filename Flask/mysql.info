@@ -1,0 +1,24 @@
+----------------------------------
+Creating Table for CRUD operations
+----------------------------------
+
+Creating table
+--------------
+1. Places Table
+
+create table places(
+    pid int auto_increment,
+    place varchar(255) not null,
+    city varchar(255) not null,
+    country varchar(255) not null,
+    primary key(pid)
+);
+
+
+2. Insert operations
+
+INSERT INTO places (place, city,country) VALUES ('CST', 'Mumbai','India');
+INSERT INTO places (place, city,country) VALUES ('Marine Drive', 'Mumbai','India');
+INSERT INTO places (place, city,country) VALUES ('Marine Drive', 'Chennai','India');
+INSERT INTO places (place, city,country) VALUES ('Marine Drive', 'Vizag','India');
+INSERT INTO places (place, city,country) VALUES ('IT HUB', 'Bangalore','India');
