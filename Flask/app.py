@@ -15,10 +15,10 @@ from flask import render_template
 app = Flask(__name__)
 
 # Configuring database App
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '1226'
-app.config['MYSQL_DB'] = 'flask_CRUD'
+app.config['MYSQL_HOST'] = 'hostname'
+app.config['MYSQL_USER'] = 'username'
+app.config['MYSQL_PASSWORD'] = 'password'
+app.config['MYSQL_DB'] = 'databasename'
 mysql = MySQL(app)
 
 
