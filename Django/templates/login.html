@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css">
+	<title>Update Page</title>
+</head>
+<body>
+	<!-- Header Navigation Bar -->
+	<header class="text-gray-600 body-font">
+	  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+	    <a href="" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+	      <span class="btn btn-info">CRUD</span>
+	    </a>
+	  </div>
+	</header>
+
+	<!-- Forms {% url 'updated' %}-->
+	<form action="{% url 'login' %}" method="POST">
+	{% csrf_token %}
+	<section class="text-gray-600 body-font relative">
+	  <div class="container px-5 py-24 mx-auto">
+	    <div class="flex flex-col text-center w-full mb-12">
+	      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"></h1>
+	    </div>
+	    <div class="lg:w-1/2 md:w-2/3 mx-auto">
+	      <div class="flex flex-wrap -m-2">
+	        <div class="p-2 w-1/2">
+	          <div class="relative">
+	          	<center>
+	            <label for="email" class="leading-7 text-sm text-gray-600">Username</label>
+	            <input type="text" id="email" name="username" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+
+	            <label for="email" class="leading-7 text-sm text-gray-600">Password</label>
+	            <input type="password" id="text" name="password" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+	            <br>
+	            </center>
+	          </div>
+	          <br>
+	          <button type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-lg">Login</button>
+	        </div>
+	        <!-- <div class="p-8 w-3">
+	          <center>
+	          <button type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-lg">Login</button>  
+	          </center>
+	        </div> -->
+	      </div>
+	    </div>
+	  </div>
+	</section>
+	</form>
+
+	<!-- Date JS -->
+	<script>
+	  var today = new Date();
+	  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	  document.getElementById("currentDate").value = date;
+	</script>
+	
+</body>
+</html>
