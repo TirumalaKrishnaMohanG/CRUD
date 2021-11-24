@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css">
+	<title>Update Page</title>
+</head>
+<body>
+	<!-- Header Navigation Bar -->
+	<header class="text-gray-600 body-font">
+	  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+	    <a href="" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+	      <span class="btn btn-info">CRUD</span>
+	    </a>
+	    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+	      <a href="{% url 'home' %}" class="mr-5 hover:text-gray-900">Back To Menu</a>
+	    </nav>
+	    <nav class="md:ml-auto flex flex-wrap text-base ">
+	      <a href="" class="mr-1 hover:text-gray-200"><font color="green">Add Record</font></a>
+	    </nav>
+	    <button class="inline-flex items-center border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 btn btn-warning"><font color="red">Logout</font>
+	    </button>
+	  </div>
+	</header>
+
+	<center><p> Welcome {{ uname }}  </p></center>
+	<!-- Forms -->
+	<form action="{% url 'updated' %}" method="POST">
+	{% csrf_token %}
+	<section class="text-gray-600 body-font relative">
+	  <div class="container px-5 py-24 mx-auto">
+	    <div class="flex flex-col text-center w-full mb-12">
+	      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"></h1>
+	    </div>
+	    <div class="lg:w-1/2 md:w-2/3 mx-auto">
+	      <div class="flex flex-wrap -m-2">
+	        <div class="p-2 w-1/2">
+	          <div class="relative">
+	          	<label for="name" class="leading-7 text-sm text-gray-600">Id</label>
+	            <input type="text" id="name" name="id" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value="{{pi.id}}">
+	            <label for="name" class="leading-7 text-sm text-gray-600">Location</label>
+	            <input type="text" id="name" name="location" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value="{{pi.location}}">
+	             <label for="name" class="leading-7 text-sm text-gray-600">City</label>
+	            <input type="text" id="name" name="city" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value="{{pi.city}}">
+	          </div>
+	        </div>
+	        <div class="p-2 w-1/2">
+	          <div class="relative">
+	            <label for="email" class="leading-7 text-sm text-gray-600">Country</label>
+	            <input type="text" id="email" name="country" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value="{{pi.country}}">
+
+	            <label for="email" class="leading-7 text-sm text-gray-600">Date</label>
+	            <input type="text" id="text" name="date" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value="{{pi.date}}" disabled>
+	          </div>
+	        </div>
+	        <div class="p-2 w-full">
+	          <button type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-lg">Click Here</button>  
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</section>
+	</form>
+
+	<!-- Date JS -->
+	<script>
+	  var today = new Date();
+	  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	  document.getElementById("currentDate").value = date;
+	</script>
+	
+</body>
+</html>
