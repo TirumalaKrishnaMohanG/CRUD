@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css">
+	<title>Home Page</title>
+</head>
+<body>
+	{% if user.is_authenticated %}
+	<!-- Header Navigation Bar -->
+	<header class="text-gray-600 body-font">
+	  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+	    <a href="" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+	      <span class="btn btn-info">CRUD</span>
+	    </a>
+	    <nav class="md:ml-auto flex flex-wrap text-base ">
+	      <p><font color="green">Welcome, {{uname}}!</font></p>
+	    </nav>
+	    <nav class="md:ml-auto flex flex-wrap text-base ">
+	      <a href="{% url 'add' %}" class="mr-1 hover:text-gray-200"><font color="green">Add Record</font></a>
+	    </nav>
+	    <a href="{% url 'logout' %}" class="inline-flex items-center border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 btn btn-warning"><font color="red">Logout</font>
+	    </a>
+	  </div>
+	</header>
+
+	<center><p> Choose any </p></center>
+	<center>
+	<a href="{% url 'home' %}" class="inline-flex items-center border-100 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 btn btn-warning"><font color="red">CRUD</font>
+	</a>
+	<a href="http://localhost:8000/api" class="inline-flex items-center border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 btn btn-warning"><font color="red">API</font>
+	</a>
+	</center>
+	{% else %}
+	<center><h3> Please login first, <a href="{% url 'login' %}">click here </a> </h3></center>
+	{% endif %}
+
+
+</body>
+</html>
