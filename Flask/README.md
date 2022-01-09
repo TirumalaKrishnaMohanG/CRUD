@@ -20,18 +20,13 @@ The following opertaions can be done with this application.
 The following modifications need to change to execute the script successfully.
 
 Step1:- Change the APP configuration in FLASK app.
-
-   Configuring database App
-   app.config['MYSQL_HOST'] = 'localhost'.
-   
-   app.config['MYSQL_USER'] = 'username'.
-   
-   app.config['MYSQL_PASSWORD'] = 'password'.
-   
-   app.config['MYSQL_DB'] = 'databasename'.
-   
-   mysql = MySQL(app).
-   
+````
+app.config['MYSQL_HOST'] = 'localhost'.
+app.config['MYSQL_USER'] = 'username'.
+app.config['MYSQL_PASSWORD'] = 'password'.
+app.config['MYSQL_DB'] = 'databasename'.
+mysql = MySQL(app).
+````
 Step2:- Use "MYSQL.info" and create the database.
 
 Step3:- Use the following command to run flask applications.
